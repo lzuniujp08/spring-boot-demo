@@ -1,4 +1,4 @@
-package pnunu.demo;
+package lzugis.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

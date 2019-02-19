@@ -1,9 +1,9 @@
-package pnunu.demo.service.impl;
+package lzugis.demo.service.impl;
 
+import lzugis.demo.dao.UserDao;
+import lzugis.demo.entity.User;
 import org.springframework.stereotype.Service;
-import pnunu.demo.dao.UserDao;
-import pnunu.demo.entity.User;
-import pnunu.demo.service.UserService;
+import lzugis.demo.service.UserService;
 
 import javax.annotation.Resource;
 

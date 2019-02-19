@@ -1,4 +1,4 @@
-package pnunu.demo.config;
+package lzugis.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,7 @@ public class Swagger2Config {
                 .enable(true)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("pnunu.demo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("lzugis.demo.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

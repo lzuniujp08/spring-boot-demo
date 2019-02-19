@@ -1,6 +1,6 @@
-package pnunu.demo.service;
+package lzugis.demo.service;
 
-import pnunu.demo.entity.User;
+import lzugis.demo.entity.User;
 
 public interface UserService {
     User getUserById(int userId);

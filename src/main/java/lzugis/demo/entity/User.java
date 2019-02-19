@@ -1,4 +1,4 @@
-package pnunu.demo.entity;
+package lzugis.demo.entity;
 
 import lombok.Data;
 
