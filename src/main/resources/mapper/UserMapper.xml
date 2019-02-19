@@ -24,4 +24,13 @@
     from sys_user
     where user_name LIKE '%${name}%'
   </select>
+
+  <insert id="addUser" parameterType="lzugis.demo.entity.User" keyProperty="id">
+    insert into sys_user(user_name, password)
+      values(#{username},#{password})
+  </insert>
+
+  <update id="updateUser" parameterType="lzugis.demo.entity.User">
+    update sys_user set user_name=#{username},password=#{password} where id=#{id}
+  </update>
 </mapper>

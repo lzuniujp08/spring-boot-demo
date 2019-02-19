@@ -1,5 +1,6 @@
 package lzugis.demo.service.impl;
 
+import io.swagger.models.auth.In;
 import lzugis.demo.dao.UserDao;
 import lzugis.demo.entity.User;
 import org.springframework.stereotype.Service;
@@ -15,16 +16,26 @@ import java.util.List;
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {
-    @Resource
-    private UserDao userDao;
+  @Resource
+  private UserDao userDao;
 
-    @Override
-    public User getUserById(int id) {
-        return userDao.getUserById(id);
-    }
+  @Override
+  public User getUserById(int id) {
+    return userDao.getUserById(id);
+  }
 
-    @Override
-    public List<User> getUserByName(String name) {
-        return userDao.getUserByName(name);
-    }
+  @Override
+  public List<User> getUserByName(String name) {
+    return userDao.getUserByName(name);
+  }
+
+  @Override
+  public void addUser(String username, String password) {
+    userDao.addUser(username, password);
+  }
+
+  @Override
+  public void updateUser(Integer id, String username, String password) {
+    userDao.updateUser(id, username, password);
+  }
 }

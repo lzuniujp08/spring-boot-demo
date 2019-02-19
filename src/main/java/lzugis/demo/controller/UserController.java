@@ -31,4 +31,26 @@ public class UserController {
         List<User> users = this.userService.getUserByName(name);
         return users;
     }
+
+    @RequestMapping(value = "/add", method = {RequestMethod.GET, RequestMethod.POST} )
+    @ResponseBody
+    public String addUser(String username, String password) {
+        try {
+            this.userService.addUser(username, password);
+            return username + " add succcess";
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
+    @RequestMapping(value = "/update", method = {RequestMethod.GET, RequestMethod.POST} )
+    @ResponseBody
+    public String updateUser(Integer id, String username, String password) {
+        try {
+            this.userService.updateUser(id, username, password);
+            return id + " update succcess";
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
 }
