@@ -32,6 +32,13 @@ public class UserController {
         return users;
     }
 
+  @RequestMapping(value = "/list", method = {RequestMethod.GET, RequestMethod.POST} )
+  @ResponseBody
+  public List<User> getUsersList() {
+    List<User> users = this.userService.getUsersList();
+    return users;
+  }
+
     @RequestMapping(value = "/add", method = {RequestMethod.GET, RequestMethod.POST} )
     @ResponseBody
     public String addUser(String username, String password) {
@@ -43,7 +50,18 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/update", method = {RequestMethod.GET, RequestMethod.POST} )
+  @RequestMapping(value = "/delete", method = {RequestMethod.GET, RequestMethod.POST} )
+  @ResponseBody
+  public String deleteUser(Integer id) {
+    try {
+      this.userService.deleteUser(id);
+      return id + " delete succcess";
+    } catch (Exception e) {
+      return e.getMessage();
+    }
+  }
+
+  @RequestMapping(value = "/update", method = {RequestMethod.GET, RequestMethod.POST} )
     @ResponseBody
     public String updateUser(Integer id, String username, String password) {
         try {
