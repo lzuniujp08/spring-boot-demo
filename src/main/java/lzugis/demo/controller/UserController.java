@@ -25,7 +25,7 @@ public class UserController {
 
     @RequestMapping(value = "/byName", method = {RequestMethod.GET, RequestMethod.POST} )
     @ResponseBody
-    public User getUserByName(@Param("name") String name) {
+    public User getUserByName(String name) {
         User user = this.userService.getUserByName(name);
         return user;
     }
