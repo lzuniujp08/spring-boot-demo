@@ -9,10 +9,17 @@
     <sql id="Base_Column" >
         id, user_name, password
     </sql>
-    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    <select id="getUserById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
         select
         <include refid="Base_Column" />
         from sys_user
         where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="getUserByName" resultType="lzugis.demo.entity.User" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column" />
+        from sys_user
+        where user_name LIKE '%${_parameter}%'
     </select>
 </mapper>

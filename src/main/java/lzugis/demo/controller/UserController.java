@@ -2,6 +2,7 @@ package lzugis.demo.controller;
 
 import lzugis.demo.entity.User;
 import lzugis.demo.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +15,18 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/select", method = RequestMethod.GET)
+    @RequestMapping(value = "/byId", method = {RequestMethod.GET, RequestMethod.POST} )
+//    @RequestMapping(value = "/select")
     @ResponseBody
-    public User toIndex(int userId) {
-        User user = this.userService.getUserById(userId);
+    public User getUserById(int id) {
+        User user = this.userService.getUserById(id);
+        return user;
+    }
+
+    @RequestMapping(value = "/byName", method = {RequestMethod.GET, RequestMethod.POST} )
+    @ResponseBody
+    public User getUserByName(@Param("name") String name) {
+        User user = this.userService.getUserByName(name);
         return user;
     }
 }
