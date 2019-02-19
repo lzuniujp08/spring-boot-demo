@@ -13,7 +13,8 @@ CREATE TABLE sys_user (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO sys_user VALUES ('1', 'zhangsan', '123456', null, null, null);
-INSERT INTO sys_user VALUES ('2', 'lisi', '123456', null, null, null);
+INSERT INTO sys_user VALUES (1, 'zhangsan', '123456', null, null, null);
+INSERT INTO sys_user VALUES (2, 'lisi', '123456', null, null, null);
+INSERT INTO sys_user VALUES (3, 'zhangwu', '123456', null, null, null);
 
 select * from sys_user;

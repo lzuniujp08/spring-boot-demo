@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -25,8 +27,8 @@ public class UserController {
 
     @RequestMapping(value = "/byName", method = {RequestMethod.GET, RequestMethod.POST} )
     @ResponseBody
-    public User getUserByName(String name) {
-        User user = this.userService.getUserByName(name);
-        return user;
+    public List<User> getUserByName(String name) {
+        List<User> users = this.userService.getUserByName(name);
+        return users;
     }
 }

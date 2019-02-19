@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import lzugis.demo.service.UserService;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author: pnunu
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByName(String name) {
+    public List<User> getUserByName(String name) {
         return userDao.getUserByName(name);
     }
 }
