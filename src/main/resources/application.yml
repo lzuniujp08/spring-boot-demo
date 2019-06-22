@@ -1,7 +1,6 @@
 mybatis:
-  typeAliasesPackage: pnunu.demo.entity
+  typeAliasesPackage: lzugis.demo.entity
   mapperLocations: classpath:mapper/*.xml
-
 
 spring:
   jpa:
@@ -12,7 +11,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/lzugis
+    url: jdbc:postgresql://localhost:5432/vue-web
     username: postgres
     password: root
     druid:
