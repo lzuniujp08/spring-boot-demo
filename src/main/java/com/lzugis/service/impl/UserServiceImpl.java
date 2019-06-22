@@ -1,10 +1,9 @@
-package lzugis.demo.service.impl;
+package com.lzugis.service.impl;
 
-import io.swagger.models.auth.In;
-import lzugis.demo.dao.UserDao;
-import lzugis.demo.entity.User;
+import com.lzugis.dao.UserDao;
+import com.lzugis.service.UserService;
+import com.lzugis.entity.User;
 import org.springframework.stereotype.Service;
-import lzugis.demo.service.UserService;
 
 import javax.annotation.Resource;
 import java.util.List;

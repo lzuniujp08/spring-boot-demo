@@ -1,8 +1,7 @@
-package lzugis.demo.controller;
+package com.lzugis.controller;
 
-import lzugis.demo.entity.User;
-import lzugis.demo.service.UserService;
-import org.apache.ibatis.annotations.Param;
+import com.lzugis.entity.User;
+import com.lzugis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

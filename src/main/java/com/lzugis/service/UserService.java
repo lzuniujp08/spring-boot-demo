@@ -1,6 +1,6 @@
-package lzugis.demo.service;
+package com.lzugis.service;
 
-import lzugis.demo.entity.User;
+import com.lzugis.entity.User;
 
 import java.util.List;
 

@@ -1,5 +1,5 @@
 mybatis:
-  typeAliasesPackage: lzugis.demo.entity
+  typeAliasesPackage: com.lzugis.entity
   mapperLocations: classpath:mapper/*.xml
 
 spring:

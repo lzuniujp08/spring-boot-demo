@@ -1,6 +1,6 @@
-package lzugis.demo.dao;
+package com.lzugis.dao;
 
-import lzugis.demo.entity.User;
+import com.lzugis.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

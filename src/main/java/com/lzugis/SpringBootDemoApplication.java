@@ -1,4 +1,4 @@
-package lzugis.demo;
+package com.lzugis;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

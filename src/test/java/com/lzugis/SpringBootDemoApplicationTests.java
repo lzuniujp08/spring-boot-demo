@@ -1,4 +1,4 @@
-package lzugis.demo;
+package com.lzugis;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

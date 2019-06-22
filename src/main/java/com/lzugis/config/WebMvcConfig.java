@@ -1,4 +1,4 @@
-package lzugis.demo.config;
+package com.lzugis.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
