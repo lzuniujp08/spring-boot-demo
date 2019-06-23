@@ -20,7 +20,7 @@ public class Swagger2Config {
                 .enable(true)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("lzugis.demo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.lzugis.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
