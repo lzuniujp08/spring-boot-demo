@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lzugis.dao.DataDao" >
-  <sql id="Capital_Column" >
+  <sql id="CityColumn" >
     name, lon, lat, st_astext(geom) as wkt
   </sql>
 
-  <select id="getCapitalList" resultType="List">
+  <resultMap id="CityResultMap" type="com.lzugis.entity.City" >
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="lon" property="lon" jdbcType="DOUBLE" />
+    <result column="lat" property="lat" jdbcType="DOUBLE" />
+    <result column="wkt" property="wkt" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="getCapitalList" resultMap="CityResultMap">
     select
-    <include refid="Capital_Column" />
+    <include refid="CityColumn" />
     from capital
   </select>
 </mapper>

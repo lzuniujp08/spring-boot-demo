@@ -17,7 +17,6 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/byId", method = {RequestMethod.GET, RequestMethod.POST} )
-//    @RequestMapping(value = "/select")
     @ResponseBody
     public User getUserById(int id) {
         User user = this.userService.getUserById(id);
