@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.lzugis.entity.City;
 
-public class CsvUtil {
+public class TxtUtil {
 
     public List<City> readCsvFile(File file) {
         String line = "";
@@ -37,8 +37,8 @@ public class CsvUtil {
     }
 
     public static void main(String[] args) {
-        CsvUtil util = new CsvUtil();
-        File file = new File("C:\\Users\\lzuni\\Desktop\\capital.csv");
+        TxtUtil util = new TxtUtil();
+        File file = new File("D:\\code\\spring-boot-demo\\file\\capital.txt");
         List list = util.readCsvFile(file);
         System.out.println(list);
     }

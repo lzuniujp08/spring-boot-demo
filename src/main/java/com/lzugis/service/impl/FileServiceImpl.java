@@ -1,7 +1,7 @@
 package com.lzugis.service.impl;
 
 import com.lzugis.service.FileService;
-import com.lzugis.utils.CsvUtil;
+import com.lzugis.utils.TxtUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service("fileService")
 public class FileServiceImpl implements FileService {
-  private CsvUtil csvUtil = new CsvUtil();
+  private TxtUtil txtUtil = new TxtUtil();
 
   @Override
   public List uploadFile(MultipartFile file) {
@@ -28,7 +28,7 @@ public class FileServiceImpl implements FileService {
       File dest = new File(filePath + fileName);
       try {
         file.transferTo(dest);
-        list = csvUtil.readCsvFile(dest);
+        list = txtUtil.readCsvFile(dest);
       } catch (IOException e) {
         e.printStackTrace();
       }
