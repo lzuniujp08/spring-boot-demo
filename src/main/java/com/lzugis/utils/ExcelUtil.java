@@ -17,7 +17,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtil {
 
-    public List<City> readExcelFile(File excel) {
+    public List<City> getFileContent(File excel) {
         List<City> cities = new ArrayList<>();
         if (excel.isFile() && excel.exists()) {
             try {
@@ -72,7 +72,7 @@ public class ExcelUtil {
     public static void main(String[] args) {
         ExcelUtil util = new ExcelUtil();
         File file = new File("D:\\code\\spring-boot-demo\\file\\capital.xls");
-        List list = util.readExcelFile(file);
+        List list = util.getFileContent(file);
         System.out.println(list);
     }
 }

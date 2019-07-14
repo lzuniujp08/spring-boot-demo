@@ -7,7 +7,7 @@ import com.lzugis.entity.City;
 
 public class TxtUtil {
 
-    public List<City> readCsvFile(File file) {
+    public List<City> getFileContent(File file) {
         String line = "";
         String everyLine = "";
         List<City> cities = new ArrayList<>();
@@ -37,9 +37,8 @@ public class TxtUtil {
     }
 
     public static void main(String[] args) {
-        TxtUtil util = new TxtUtil();
-        File file = new File("D:\\code\\spring-boot-demo\\file\\capital.txt");
-        List list = util.readCsvFile(file);
-        System.out.println(list);
+        String fileName = "capital.csv";
+        String[] fileInfo = fileName.split("\\.");
+        System.out.println(fileInfo);
     }
 }
