@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lzugis.dao.CodeDao" >
+  <sql id="Base_Column" >
+    id, pid, name, code
+  </sql>
+
+  <resultMap id="BaseResultMap" type="com.lzugis.entity.Code" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="getCodesList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column" />
+    from sys_code
+    order by id
+  </select>
+
+  <select id="getCodeById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column" />
+    from sys_code
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <update id="updateCode" parameterType="com.lzugis.entity.Code">
+    update sys_code set name=#{name},code=#{code} where id=#{id}
+  </update>
+
+  <insert id="addCode" parameterType="com.lzugis.entity.Code" keyProperty="id">
+    insert into sys_code(pid, name, code)
+      values(#{pid}, #{name},#{code})
+  </insert>
+
+  <delete id="deleteUser" parameterType="com.lzugis.entity.User">
+    delete from sys_code where id=#{id}
+  </delete>
+</mapper>
