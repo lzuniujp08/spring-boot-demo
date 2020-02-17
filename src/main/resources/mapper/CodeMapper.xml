@@ -35,7 +35,7 @@
       values(#{pid}, #{name},#{code})
   </insert>
 
-  <delete id="deleteUser" parameterType="com.lzugis.entity.User">
+  <delete id="deleteCode" parameterType="com.lzugis.entity.Code">
     delete from sys_code where id=#{id}
   </delete>
 </mapper>

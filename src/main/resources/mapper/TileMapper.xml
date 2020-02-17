@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lzugis.dao.TileDao" >
+
+  <select id="getTile" resultType="byte[]">
+    SELECT ST_AsMVT(q, 'admin', 3857, 'geom')
+      FROM (
+        SELECT gid, name,
+          ST_AsMvtGeom(
+            geom,
+            BBox(#{x,jdbcType=NUMERIC}, #{y,jdbcType=NUMERIC}, #{z,jdbcType=NUMERIC}),
+            3857,
+            256,
+            true
+          ) AS geom
+        FROM city
+        WHERE geom is not null
+        AND ST_Intersects(geom, BBox(#{x,jdbcType=NUMERIC}, #{y,jdbcType=NUMERIC}, #{z,jdbcType=NUMERIC}))
+      ) AS q;
+  </select>
+
+</mapper>
